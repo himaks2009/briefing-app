@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: instruktazh
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: NODE_ENV=production node dist/index.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_SECRET
+        generateValue: true
+    disk:
+      name: data
+      mountPath: /opt/render/project/src
+      sizeGB: 1
