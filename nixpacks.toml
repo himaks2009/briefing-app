@@ -1,0 +1,5 @@
+[phases.build]
+cmds = ["npm install --build-from-source", "npm run build"]
+
+[start]
+cmd = "node dist/index.cjs"
